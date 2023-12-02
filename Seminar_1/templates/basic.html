@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="page">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="header__img" src="{{ url_for('static', filename='img/online_store.png') }}" alt="Интернет-магазин">
+                <span class="fs-4">Интернет Магазин</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Главная страница</a></li>
+                <li class="nav-item"><a href="{{ url_for('cloth') }}" class="nav-link">Одежда</a></li>
+                <li class="nav-item"><a href="{{ url_for('jacket') }}" class="nav-link">Картки</a></li>
+                <li class="nav-item"><a href="{{ url_for('shoes') }}" class="nav-link">Обувь</a></li>
+
+            </ul>
+        </header>
+
+        <div class="content">{% block content %} {% endblock %}</div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="https://t.me/MikhailTsaplin"><img class="footer_img" src="{{ url_for('static', filename='img/telegram.png') }}" alt="telegram">
+                        <use xlink:href="#telegram"></use>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="https://vk.com/id156771904"><img class="footer_img" src="{{ url_for('static', filename='img/VC.png') }}" alt="ВК">
+                        <use xlink:href="#VC"></use>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="https://wa.me/+79644751839"><img class="footer_img" src="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp">
+                        <use xlink:href="#WhatsApp"></use>
+                    </a>
+                </li>
+
+            </ul>
+        </footer>
+    </div>
+
+
+    <!-- <a target="_blank" href="https://icons8.com/icon/AltfLkFSP7XN/whatsapp">WhatsApp</a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a> -->
+
+
+</body>
+
+</html>
