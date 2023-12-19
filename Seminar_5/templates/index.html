@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+</head>
+<body>
+
+<h1>Список пользователей</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Пароль</th>
+    </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.password }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<form action="/users" method="post">
+    <input type="number" name="id" placeholder="ID">
+    <input type="text" name="name" placeholder="Имя">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Пароль">
+    <input type="submit" value="Добавить">
+</form>
+
+</body>
+</html>
