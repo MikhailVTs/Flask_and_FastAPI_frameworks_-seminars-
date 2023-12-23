@@ -53,7 +53,7 @@ async def create_note(count: int):
     return {'Сообщение': f'{count} Создано заказов'}
 
 
-# read all users/products/orders
+
 
 @app.get("/users/", response_model=List[models.UserRead])
 async def read_users():
@@ -73,7 +73,7 @@ async def read_orders():
     return await db.database.fetch_all(article)
 
 
-# read one user/product/order
+
 
 @app.get("/users/{user_id}", response_model=models.UserRead)
 async def read_user(user_id: int):
